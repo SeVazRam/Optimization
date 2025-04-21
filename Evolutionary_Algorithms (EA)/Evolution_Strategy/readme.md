@@ -23,7 +23,7 @@ Inspired by biological evolution, ES rely heavily on **mutation** as the primary
 Evolution Strategies are usually denoted as:
 
 \[
-(\mu/\rho, \lambda) \quad \text{or} \quad (\mu/\rho + \lambda)
+( \mu \rho, \lambda) \quad \text{or} \quad (\mu \rho + \lambda)
 \]
 
 where:
