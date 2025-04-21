@@ -1,0 +1,86 @@
+# Evolution Strategies (ES)
+
+This folder contains implementations and examples of **Evolution Strategies (ES)**, a class of Evolutionary Algorithms designed for real-valued optimization in continuous search spaces.
+
+Inspired by biological evolution, ES rely heavily on **mutation** as the primary search operator, while employing optional recombination and selection mechanisms to evolve a population of candidate solutions toward optimality.
+
+## What are Evolution Strategies?
+
+- **Evolution Strategies (ES)** were introduced in the 1960s by Ingo Rechenberg and Hans-Paul Schwefel.
+- They are optimization algorithms particularly suited for **continuous, nonlinear, non-convex, and noisy** problems.
+- Unlike Genetic Algorithms, ES focus more on **mutation and self-adaptation** rather than crossover and binary encodings.
+
+## Core Concepts
+
+- **Representation**: Real-valued vectors.
+- **Mutation**: Gaussian perturbations to solution vectors.
+- **Selection**: Survival of the fittest — elitist or non-elitist mechanisms.
+- **Adaptation**: Step-size (`sigma`) evolves to control the scale of mutations.
+- **Recombination**: Optional, for combining information from multiple parents.
+
+## Standard Notations
+
+Evolution Strategies are usually denoted as:
+
+\[
+(\mu/\rho, \lambda) \quad \text{or} \quad (\mu/\rho + \lambda)
+\]
+
+where:
+
+- \( \mu \): Number of parents.
+- \( \rho \): Number of parents participating in recombination (optional).
+- \( \lambda \): Number of offspring.
+- `(μ, λ)` : Only offspring are eligible for selection (non-elitist).
+- `(μ + λ)` : Both parents and offspring compete (elitist).
+
+## Algorithm Workflow
+
+1. **Initialization**:  
+   Generate an initial population of candidate solutions, each with associated strategy parameters (e.g., mutation strength \( \sigma \)).
+
+2. **Mutation**:  
+   Perturb solutions by adding Gaussian noise:
+   \[
+   x' = x + \sigma \cdot N(0, I)
+   \]
+
+3. **Recombination** (optional):  
+   Combine multiple parents to produce offspring.
+
+4. **Evaluation**:  
+   Assess the fitness of each offspring.
+
+5. **Selection**:  
+   Choose the best individuals based on fitness to form the next generation.
+
+6. **Self-adaptation**:  
+   Allow mutation parameters (e.g., \( \sigma \)) to evolve alongside the solutions.
+
+7. **Termination**:  
+   Repeat until a stopping criterion is met (e.g., maximum generations or satisfactory fitness).
+
+## Variants Covered
+
+- **(1+1) Evolution Strategy**: Single parent, single offspring.
+- **(μ, λ) Evolution Strategy**: Multiple parents, offspring-only selection.
+- **(μ + λ) Evolution Strategy**: Multiple parents, elitist selection.
+- **Self-Adaptive ES**: Each individual carries and evolves its own mutation parameters.
+- **CMA-ES (Covariance Matrix Adaptation Evolution Strategy)**: Advanced variant that adapts full covariance matrices for intelligent mutation scaling and directionality.
+
+## Applications
+
+- Engineering optimization (e.g., aerodynamic design)
+- Hyperparameter tuning in machine learning
+- Robotics and control systems
+- Financial modeling
+- Any continuous, black-box, or noisy optimization problem
+
+## Technologies Used
+
+- **Python 3.11+**
+- Core libraries:
+  - `numpy`
+  - `matplotlib` (for convergence plots)
+  - *(for advanced algorithms like CMA-ES)* `pycma`, `deap`, or custom implementations
+
