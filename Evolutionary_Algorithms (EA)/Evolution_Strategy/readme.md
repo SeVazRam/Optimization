@@ -65,11 +65,9 @@ where:
 - **(1+1) Evolution Strategy**: Single parent, single offspring.
 - **(μ, λ) Evolution Strategy**: Multiple parents, offspring-only selection.
 - **(μ + λ) Evolution Strategy**: Multiple parents, elitist selection.
-- **Self-Adaptive ES**: Each individual carries and evolves its own mutation parameters.
-- **CMA-ES (Covariance Matrix Adaptation Evolution Strategy)**: Advanced variant that adapts full covariance matrices for intelligent mutation scaling and directionality.
 
 ## PseudoCodes
-(1+1) Evolution Strategy
+**(1+1) Evolution Strategy**
 
 Description:
 Single parent generates one offspring. The offspring replaces the parent only if it has better fitness.
@@ -83,7 +81,7 @@ Pseudocode:
     c. Optionally adapt σ
 3. Return best solution found
 
-(μ, λ) Evolution Strategy
+**(μ, λ) Evolution Strategy**
 
 Description:
 A population of μ parents generates λ offspring (λ > μ). Only offspring compete for survival. The best μ offspring form the next generation.
@@ -98,7 +96,7 @@ Pseudocode:
     c. Select the μ best offspring to form new parents
 3. Return best solution found
 
-(μ+1) Evolution Strategy
+**(μ+1) Evolution Strategy**
 
 Description:
 A population of μ parents generates a single offspring per generation. The offspring competes against the parents, and the μ best individuals are selected for the next generation.
@@ -112,7 +110,7 @@ Pseudocode:
     d. Select the μ best individuals from parents + child
 3. Return best solution found
 
- (μ + λ) Evolution Strategy
+**(μ + λ) Evolution Strategy**
 
 Description:
 A population of μ parents generates λ offspring. Both parents and offspring compete together, and the μ best individuals form the next generation (elitist strategy).
