@@ -68,6 +68,65 @@ where:
 - **Self-Adaptive ES**: Each individual carries and evolves its own mutation parameters.
 - **CMA-ES (Covariance Matrix Adaptation Evolution Strategy)**: Advanced variant that adapts full covariance matrices for intelligent mutation scaling and directionality.
 
+## PseudoCodes
+(1+1) Evolution Strategy
+
+Description:
+Single parent generates one offspring. The offspring replaces the parent only if it has better fitness.
+
+Pseudocode:
+1. Initialize x (solution) and σ (mutation step size)
+2. While stopping criterion not met:
+    a. Generate offspring: x' = x + σ * N(0, I)
+    b. If f(x') < f(x):
+        - x ← x'
+    c. Optionally adapt σ
+3. Return best solution found
+
+(μ, λ) Evolution Strategy
+
+Description:
+A population of μ parents generates λ offspring (λ > μ). Only offspring compete for survival. The best μ offspring form the next generation.
+
+Pseudocode:
+1. Initialize a population of μ parents and σ
+2. While stopping criterion not met:
+    a. For i = 1 to λ:
+        - Randomly select a parent
+        - Generate offspring: child_i = parent + σ * N(0, I)
+    b. Evaluate fitness of all offspring
+    c. Select the μ best offspring to form new parents
+3. Return best solution found
+
+(μ+1) Evolution Strategy
+
+Description:
+A population of μ parents generates a single offspring per generation. The offspring competes against the parents, and the μ best individuals are selected for the next generation.
+
+Pseudocode:
+1. Initialize a population of μ parents and σ
+2. While stopping criterion not met:
+    a. Randomly select one parent
+    b. Generate offspring: child = parent + σ * N(0, I)
+    c. Evaluate fitness of all parents and the child
+    d. Select the μ best individuals from parents + child
+3. Return best solution found
+
+ (μ + λ) Evolution Strategy
+
+Description:
+A population of μ parents generates λ offspring. Both parents and offspring compete together, and the μ best individuals form the next generation (elitist strategy).
+
+Pseudocode:
+1. Initialize a population of μ parents and σ
+2. While stopping criterion not met:
+    a. For i = 1 to λ:
+        - Randomly select a parent
+        - Generate offspring: child_i = parent + σ * N(0, I)
+    b. Evaluate fitness of all offspring and parents
+    c. Select the μ best individuals from parents + offspring
+3. Return best solution found  
+
 ## Applications
 
 - Engineering optimization (e.g., aerodynamic design)
