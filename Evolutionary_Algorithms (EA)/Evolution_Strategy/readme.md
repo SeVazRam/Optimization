@@ -23,14 +23,14 @@ Inspired by biological evolution, ES rely heavily on **mutation** as the primary
 Evolution Strategies are usually denoted as:
 
 \[
-( $\mu$ \rho, \lambda) \quad \text{or} \quad (\mu \rho + \lambda)
+( $\mu$ $\rho$, $\lambda$) \quad \text{or} \quad ($\mu$ $\rho$ + $\lambda$)
 \]
 
 where:
 
-- \( \mu \): Number of parents.
-- \( \rho \): Number of parents participating in recombination (optional).
-- \( \lambda \): Number of offspring.
+- \( $\mu$ \): Number of parents.
+- \( $\rho$ \): Number of parents participating in recombination (optional).
+- \( $\lambda$ \): Number of offspring.
 - `(μ, λ)` : Only offspring are eligible for selection (non-elitist).
 - `(μ + λ)` : Both parents and offspring compete (elitist).
 
