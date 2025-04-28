@@ -16,7 +16,7 @@ The goal is to find solutions that balance two objective functions under a linea
 
 We aim to minimize two objective functions:
 
-- $ f_1(x, y) = x^2 + y^2 $  (minimize distance to the origin)
+- $f_1(x, y) = x^2 + y^2$  (minimize distance to the origin)
 - $ f_2(x, y) = (x-1)^2 + y^2 $  (minimize distance to the point (1,0))
 
 Subject to the constraint:
