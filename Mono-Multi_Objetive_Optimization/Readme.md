@@ -16,8 +16,8 @@ The goal is to find solutions that balance two objective functions under a linea
 
 We aim to minimize two objective functions:
 
-- \( f_1(x, y) = x^2 + y^2 \)  (minimize distance to the origin)
-- \( f_2(x, y) = (x-1)^2 + y^2 \)  (minimize distance to the point (1,0))
+- $ f_1(x, y) = x^2 + y^2 $  (minimize distance to the origin)
+- $ f_2(x, y) = (x-1)^2 + y^2 $  (minimize distance to the point (1,0))
 
 Subject to the constraint:
 
@@ -39,7 +39,7 @@ Subject to the constraint:
 
 ## Key Results
 
-- Visualization of the feasible region \( x + y \geq 1 \).
+- Visualization of the feasible region $ x + y \geq 1 $.
 - Approximate Pareto front generated using weighted sum method.
 - Approximate Pareto front generated using PSO.
 - Summary tables for both optimization strategies.
